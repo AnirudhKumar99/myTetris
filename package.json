@@ -1,0 +1,23 @@
+{
+  "name": "tetris",
+  "version": "1.0.0",
+  "description": "A simple tetris game made with p5.js",
+  "main": "cell.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnirudhKumar99/myTetris.git"
+  },
+  "keywords": [
+    "p5.js",
+    "Tetris"
+  ],
+  "author": "Anirudh Kumar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AnirudhKumar99/myTetris/issues"
+  },
+  "homepage": "https://github.com/AnirudhKumar99/myTetris#readme"
+}
