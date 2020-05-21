@@ -43,7 +43,7 @@ function setup() {
         }
     }
     canvas = createCanvas(480, 900);
-    canvas.position((windowWidth - 480 / 2), 0)
+    canvas.position((windowWidth/2)-240  , 0)
     background(200);
     game = new Game(10, 20, shapeMatrices);
     console.log(frameRate);
