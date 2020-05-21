@@ -44,12 +44,30 @@ function setup() {
     game = new Game(10, 20, shapeMatrices);
     console.log(frameRate)
 }
+
+let first, second;
 function keyPressed() {
 
     game.update(key);
+    // console.log(key);
     fCounter = 30;
 
 }
+function mouseClicked() {
+    first = [mouseX, mouseY];
+}
+function mouseReleased(){
+    second = [mouseX, mouseY];
+    let key;
+    if ((second[0] - first[0]) > cellSize)
+        key = 'ArrowRight'
+    game.update(key)
+    console.log(first, second);
+    first=[];
+    second=[];
+}
+
+
 
 function draw() {
     // frameRate(80);
