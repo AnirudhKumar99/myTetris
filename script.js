@@ -1,5 +1,8 @@
 let cellSize = 40;
 
+let left, right, down, up, canvas;
+
+
 let shapeMatrices
 let game;
 let shape;
@@ -39,10 +42,28 @@ function setup() {
             clr: color(0, 0, 227)
         }
     }
-    createCanvas(480, 900);
+    canvas = createCanvas(480, 900);
+    canvas.position((windowWidth - 480 / 2), 0)
     background(200);
     game = new Game(10, 20, shapeMatrices);
-    console.log(frameRate)
+    console.log(frameRate);
+    left = createButton('←')
+    left.position(windowWidth / 2, height + left.height);
+    left.mouseClicked(() => game.update('ArrowLeft'))
+
+    right = createButton('→')
+    right.position(windowWidth / 2 + 2 * left.width, height + left.height);
+    right.mouseClicked(() => game.update('ArrowRight'))
+
+    down = createButton('↓')
+    down.position(windowWidth / 2 + left.width, height + 2 * left.height);
+    down.mouseClicked(() => game.update('ArrowDown'))
+
+
+    up = createButton('↑')
+    up.position(windowWidth / 2 + left.width, height);
+    up.mouseClicked(() => game.update('ArrowUp'))
+
 }
 
 let first, second;
@@ -52,19 +73,6 @@ function keyPressed() {
     // console.log(key);
     fCounter = 30;
 
-}
-function mouseClicked() {
-    first = [mouseX, mouseY];
-}
-function mouseReleased(){
-    second = [mouseX, mouseY];
-    let key;
-    if ((second[0] - first[0]) > cellSize)
-        key = 'ArrowRight'
-    game.update(key)
-    console.log(first, second);
-    first=[];
-    second=[];
 }
 
 
